@@ -17,6 +17,12 @@ jobs:
     needs: [job_on_ubuntu, job_on_windows]
     runs-on: macos-latest
     name: A job that runs on Mac after first two jobs
+    steps:
+    - run: pwd
+    - name: new step
+      run: ls
+    - name: third step
+      run: ps -aux 
   Final_job:
     needs: job_on_macos
     runs-on: ubuntu-latest
